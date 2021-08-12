@@ -1,0 +1,23 @@
+2
+Bike
+living room
+
+false
+200
+08/03/2021
+
+
+
+Hotpot
+kitchen
+
+false
+
+08/12/2021
+
+
+
+3
+kitchen
+living room
+

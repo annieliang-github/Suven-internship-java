@@ -20,7 +20,6 @@ import java.io.*;
 import java.text.DecimalFormat;
 import java.util.Date;
 
-@SuppressWarnings("serial")
 public class HomeInventory extends JFrame {
 	JToolBar inventoryToolBar = new JToolBar();
 	JButton newButton = new JButton(new ImageIcon("new.gif"));
@@ -30,10 +29,10 @@ public class HomeInventory extends JFrame {
 	JButton nextButton = new JButton(new ImageIcon("next.gif"));
 	JButton printButton = new JButton(new ImageIcon("print.gif"));
 	JButton exitButton = new JButton();
+	// Frame
 	JLabel itemLabel = new JLabel();
 	JTextField itemTextField = new JTextField();
 	JLabel locationLabel = new JLabel();
-	@SuppressWarnings("rawtypes")
 	JComboBox locationComboBox = new JComboBox();
 	JCheckBox markedCheckBox = new JCheckBox();
 	JLabel serialLabel = new JLabel();
@@ -60,16 +59,16 @@ public class HomeInventory extends JFrame {
 	static int lastPage;
 
 	public static void main(String args[]) {
-		new HomeInventory();
+
+		new HomeInventory().show();
 	}
 
-	@SuppressWarnings("unchecked")
 	public HomeInventory() {
+
 		setTitle("Home Inventory Manager");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
-			@Override
 			public void windowClosing(WindowEvent evt) {
 				exitForm(evt);
 			}
@@ -95,7 +94,6 @@ public class HomeInventory extends JFrame {
 		newButton.setFocusable(false);
 		inventoryToolBar.add(newButton);
 		newButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				newButtonActionPerformed(e);
 			}
@@ -108,7 +106,6 @@ public class HomeInventory extends JFrame {
 		deleteButton.setFocusable(false);
 		inventoryToolBar.add(deleteButton);
 		deleteButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				deleteButtonActionPerformed(e);
 			}
@@ -121,7 +118,6 @@ public class HomeInventory extends JFrame {
 		saveButton.setFocusable(false);
 		inventoryToolBar.add(saveButton);
 		saveButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				saveButtonActionPerformed(e);
 			}
@@ -135,7 +131,6 @@ public class HomeInventory extends JFrame {
 		previousButton.setFocusable(false);
 		inventoryToolBar.add(previousButton);
 		previousButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				previousButtonActionPerformed(e);
 			}
@@ -148,7 +143,6 @@ public class HomeInventory extends JFrame {
 		nextButton.setFocusable(false);
 		inventoryToolBar.add(nextButton);
 		nextButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				nextButtonActionPerformed(e);
 			}
@@ -162,7 +156,6 @@ public class HomeInventory extends JFrame {
 		printButton.setFocusable(false);
 		inventoryToolBar.add(printButton);
 		printButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				printButtonActionPerformed(e);
 			}
@@ -173,7 +166,6 @@ public class HomeInventory extends JFrame {
 		exitButton.setFocusable(false);
 		inventoryToolBar.add(exitButton);
 		exitButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				exitButtonActionPerformed(e);
 			}
@@ -194,7 +186,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(itemTextField, gridConstraints);
 		itemTextField.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				itemTextFieldActionPerformed(e);
 			}
@@ -218,7 +209,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(locationComboBox, gridConstraints);
 		locationComboBox.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				locationComboBoxActionPerformed(e);
 			}
@@ -247,7 +237,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(serialTextField, gridConstraints);
 		serialTextField.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				serialTextFieldActionPerformed(e);
 			}
@@ -268,7 +257,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(priceTextField, gridConstraints);
 		priceTextField.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				priceTextFieldActionPerformed(e);
 			}
@@ -289,7 +277,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(dateDateChooser, gridConstraints);
 		dateDateChooser.addPropertyChangeListener(new PropertyChangeListener() {
-			@Override
 			public void propertyChange(PropertyChangeEvent e) {
 				dateDateChooserPropertyChange(e);
 			}
@@ -310,7 +297,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(storeTextField, gridConstraints);
 		storeTextField.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				storeTextFieldActionPerformed(e);
 			}
@@ -331,7 +317,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(noteTextField, gridConstraints);
 		noteTextField.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				noteTextFieldActionPerformed(e);
 			}
@@ -366,7 +351,6 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.WEST;
 		getContentPane().add(photoButton, gridConstraints);
 		photoButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				photoButtonActionPerformed(e);
 			}
@@ -382,8 +366,11 @@ public class HomeInventory extends JFrame {
 		gridConstraints.anchor = GridBagConstraints.CENTER;
 		getContentPane().add(searchPanel, gridConstraints);
 		int x = 0, y = 0;
+
 		for (int i = 0; i < 26; i++) {
+
 			searchButton[i] = new JButton();
+
 			searchButton[i].setText(String.valueOf((char) (65 + i)));
 			searchButton[i].setFont(new Font("Arial", Font.BOLD, 12));
 			searchButton[i].setMargin(new Insets(-10, -10, -10, -10));
@@ -394,13 +381,14 @@ public class HomeInventory extends JFrame {
 			gridConstraints.gridx = x;
 			gridConstraints.gridy = y;
 			searchPanel.add(searchButton[i], gridConstraints);
+
 			searchButton[i].addActionListener(new ActionListener() {
-				@Override
 				public void actionPerformed(ActionEvent e) {
 					searchButtonActionPerformed(e);
 				}
 			});
 			x++;
+
 			if (x % 6 == 0) {
 				x = 0;
 				y++;
@@ -419,6 +407,7 @@ public class HomeInventory extends JFrame {
 		setBounds((int) (0.5 * (screenSize.width - getWidth())), (int) (0.5 * (screenSize.height - getHeight())),
 				getWidth(), getHeight());
 		int n;
+
 		try {
 			BufferedReader inputFile = new BufferedReader(new FileReader("inventory.txt"));
 			numberEntries = Integer.valueOf(inputFile.readLine()).intValue();
@@ -436,6 +425,7 @@ public class HomeInventory extends JFrame {
 					myInventory[i].photoFile = inputFile.readLine();
 				}
 			}
+
 			n = Integer.valueOf(inputFile.readLine()).intValue();
 			if (n != 0) {
 				for (int i = 0; i < n; i++) {
@@ -462,6 +452,7 @@ public class HomeInventory extends JFrame {
 		if (JOptionPane.showConfirmDialog(null, "Any unsaved changes will be lost.\nAre you sure you want to exit?",
 				"Exit Program", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION)
 			return;
+
 		try {
 			PrintWriter outputFile = new PrintWriter(new BufferedWriter(new FileWriter("inventory.txt")));
 			outputFile.println(numberEntries);
@@ -478,6 +469,7 @@ public class HomeInventory extends JFrame {
 					outputFile.println(myInventory[i].photoFile);
 				}
 			}
+
 			outputFile.println(locationComboBox.getItemCount());
 			if (locationComboBox.getItemCount() != 0) {
 				for (int i = 0; i < locationComboBox.getItemCount(); i++)
@@ -511,6 +503,7 @@ public class HomeInventory extends JFrame {
 	}
 
 	private void saveButtonActionPerformed(ActionEvent e) {
+
 		itemTextField.setText(itemTextField.getText().trim());
 		if (itemTextField.getText().equals("")) {
 			JOptionPane.showConfirmDialog(null, "Must have item description.", "Error", JOptionPane.DEFAULT_OPTION,
@@ -519,11 +512,14 @@ public class HomeInventory extends JFrame {
 			return;
 		}
 		if (newButton.isEnabled()) {
+
 			deleteEntry(currentEntry);
 		}
+
 		String s = itemTextField.getText();
 		itemTextField.setText(s.substring(0, 1).toUpperCase() + s.substring(1));
 		numberEntries++;
+
 		currentEntry = 1;
 		if (numberEntries != 1) {
 			do {
@@ -532,6 +528,7 @@ public class HomeInventory extends JFrame {
 				currentEntry++;
 			} while (currentEntry < numberEntries);
 		}
+
 		if (currentEntry != numberEntries) {
 			for (int i = numberEntries; i >= currentEntry + 1; i--) {
 				myInventory[i - 1] = myInventory[i - 2];
@@ -600,6 +597,7 @@ public class HomeInventory extends JFrame {
 		int i;
 		if (numberEntries == 0)
 			return;
+
 		String letterClicked = e.getActionCommand();
 		i = 0;
 		do {
@@ -618,8 +616,8 @@ public class HomeInventory extends JFrame {
 		locationComboBox.requestFocus();
 	}
 
-	@SuppressWarnings("unchecked")
 	private void locationComboBoxActionPerformed(ActionEvent e) {
+
 		if (locationComboBox.getItemCount() != 0) {
 			for (int i = 0; i < locationComboBox.getItemCount(); i++) {
 				if (locationComboBox.getSelectedItem().toString().equals(locationComboBox.getItemAt(i).toString())) {
@@ -628,6 +626,7 @@ public class HomeInventory extends JFrame {
 				}
 			}
 		}
+
 		locationComboBox.addItem(locationComboBox.getSelectedItem());
 		serialTextField.requestFocus();
 	}
@@ -659,6 +658,7 @@ public class HomeInventory extends JFrame {
 	}
 
 	private void showEntry(int j) {
+
 		itemTextField.setText(myInventory[j - 1].description);
 		locationComboBox.setSelectedItem(myInventory[j - 1].location);
 		markedCheckBox.setSelected(myInventory[j - 1].marked);
@@ -677,7 +677,6 @@ public class HomeInventory extends JFrame {
 		itemTextField.requestFocus();
 	}
 
-	@SuppressWarnings("deprecation")
 	private Date stringToDate(String s) {
 		int m = Integer.valueOf(s.substring(0, 2)).intValue() - 1;
 		int d = Integer.valueOf(s.substring(3, 5)).intValue();
@@ -686,12 +685,9 @@ public class HomeInventory extends JFrame {
 	}
 
 	private String dateToString(Date dd) {
-		@SuppressWarnings("deprecation")
 		String yString = String.valueOf(dd.getYear() + 1900);
-		@SuppressWarnings("deprecation")
 		int m = dd.getMonth() + 1;
 		String mString = new DecimalFormat("00").format(m);
-		@SuppressWarnings("deprecation")
 		int d = dd.getDate();
 		String dString = new DecimalFormat("00").format(d);
 		return (mString + "/" + dString + "/" + yString);
@@ -711,6 +707,7 @@ public class HomeInventory extends JFrame {
 	}
 
 	private void blankValues() {
+
 		newButton.setEnabled(false);
 		deleteButton.setEnabled(false);
 		saveButton.setEnabled(true);
@@ -731,7 +728,9 @@ public class HomeInventory extends JFrame {
 	}
 
 	private void deleteEntry(int j) {
+
 		if (j != numberEntries) {
+
 			for (int i = j; i < numberEntries; i++) {
 				myInventory[i - 1] = new InventoryItem();
 				myInventory[i - 1] = myInventory[i];
@@ -768,9 +767,7 @@ public class HomeInventory extends JFrame {
 	}
 }
 
-@SuppressWarnings("serial")
 class PhotoPanel extends JPanel {
-	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2D = (Graphics2D) g;
 		super.paintComponent(g2D);
@@ -792,14 +789,12 @@ class PhotoPanel extends JPanel {
 }
 
 class InventoryDocument implements Printable {
-	@Override
 	public int print(Graphics g, PageFormat pf, int pageIndex) {
 		Graphics2D g2D = (Graphics2D) g;
 		if ((pageIndex + 1) > HomeInventory.lastPage) {
 			return NO_SUCH_PAGE;
 		}
 		int i, iEnd;
-
 		g2D.setFont(new Font("Arial", Font.BOLD, 14));
 		g2D.drawString("Home Inventory Items - Page " + String.valueOf(pageIndex + 1), (int) pf.getImageableX(),
 				(int) (pf.getImageableY() + 25));
@@ -809,25 +804,30 @@ class InventoryDocument implements Printable {
 		if (iEnd > HomeInventory.numberEntries)
 			iEnd = HomeInventory.numberEntries;
 		for (i = 0 + HomeInventory.entriesPerPage * pageIndex; i < iEnd; i++) {
-			Line2D.Double dividingLine = new Line2D.Double(pf.getImageableX(), y, pf.getImageableX() + pf.getImageableWidth(), y);
+			Line2D.Double dividingLine = new Line2D.Double(pf.getImageableX(), y,
+					pf.getImageableX() + pf.getImageableWidth(), y);
 			g2D.draw(dividingLine);
 			y += dy;
 			g2D.setFont(new Font("Arial", Font.BOLD, 12));
 			g2D.drawString(HomeInventory.myInventory[i].description, (int) pf.getImageableX(), y);
 			y += dy;
 			g2D.setFont(new Font("Arial", Font.PLAIN, 12));
-			g2D.drawString("Location: " + HomeInventory.myInventory[i].location, (int) (pf.getImageableX() + 25), y);
+			g2D.drawString("Location: " + HomeInventory.myInventory[i].location,
+					(int) (pf.getImageableX() + 25), y);
 			y += dy;
 			if (HomeInventory.myInventory[i].marked)
 				g2D.drawString("Item is marked with identifying information.", (int) (pf.getImageableX() + 25), y);
 			else
 				g2D.drawString("Item is NOT marked with identifying information.", (int) (pf.getImageableX() + 25), y);
 			y += dy;
-			g2D.drawString("Serial Number: " + HomeInventory.myInventory[i].serialNumber, (int) (pf.getImageableX() + 25), y);
+			g2D.drawString("Serial Number: " + HomeInventory.myInventory[i].serialNumber,
+					(int) (pf.getImageableX() + 25), y);
 			y += dy;
-			g2D.drawString("Price: $" + HomeInventory.myInventory[i].purchasePrice + ", Purchased on: " + HomeInventory.myInventory[i].purchaseDate, (int) (pf.getImageableX() + 25), y);
+			g2D.drawString("Price: $" + HomeInventory.myInventory[i].purchasePrice + ", Purchased on: "
+					+ HomeInventory.myInventory[i].purchaseDate, (int) (pf.getImageableX() + 25), y);
 			y += dy;
-			g2D.drawString("Purchased at: " + HomeInventory.myInventory[i].purchaseLocation, (int) (pf.getImageableX() + 25), y);
+			g2D.drawString("Purchased at: " + HomeInventory.myInventory[i].purchaseLocation,
+					(int) (pf.getImageableX() + 25), y);
 			y += dy;
 			g2D.drawString("Note: " + HomeInventory.myInventory[i].note, (int) (pf.getImageableX() + 25), y);
 			y += dy;
@@ -842,3 +842,4 @@ class InventoryDocument implements Printable {
 		return PAGE_EXISTS;
 	}
 }
+
